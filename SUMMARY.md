@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Kotlin实战读书笔记](README.md)
+* [Kotlin学习笔记](README.md)
 * [Kotlin实战读书笔记](kotlin-shi-zhan-du-shu-bi-ji-1/README.md)
   * [第2章 kotlin基础](kotlin-shi-zhan-du-shu-bi-ji-1/di-2-zhang-kotlin-ji-chu.md)
   * [第3章 函数的定义与调用](kotlin-shi-zhan-du-shu-bi-ji-1/di-3-zhang-han-shu-de-ding-yi-yu-tiao-yong.md)
