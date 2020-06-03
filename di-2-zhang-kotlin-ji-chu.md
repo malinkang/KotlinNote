@@ -58,8 +58,6 @@ val（来自value）不可变引用。使用val声明的变量不能在初始化
 
 ### 2.3.1 声明枚举类
 
-{% code-tabs %}
-{% code-tabs-item title="Java声明一个枚举类" %}
 ```java
 public enum Color {
 
@@ -80,8 +78,6 @@ public enum Color {
     }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ```kotlin
 enum class Color constructor(private val r: Int, private val g: Int, private val b: Int) {
@@ -112,8 +108,6 @@ fun getMnemonic(color: Color) =
 println(getMnemonic(Color.BLUE)) //Battle
 ```
 
-{% code-tabs %}
-{% code-tabs-item title="在一个when分支上合并多个选项" %}
 ```kotlin
 fun getWarmth(color: Color) = when (color) {
     Color.RED, Color.ORANGE, Color.YELLOW -> "warm"
@@ -122,8 +116,7 @@ fun getWarmth(color: Color) = when (color) {
 }
 println(getWarmth(Color.ORANGE)) //Warm
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+
 
 ### 2.3.3 在“when”结构上使用任意对象
 

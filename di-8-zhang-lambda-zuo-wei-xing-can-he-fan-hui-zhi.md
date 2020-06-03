@@ -68,9 +68,6 @@ println(letters.joinToString()) //Alpha, Beta
 println(letters.joinToString(transform = String::toLowerCase)) //alpha, beta
 println(letters.joinToString(separator = "! ", postfix = "! ", transform = String::toUpperCase)) //ALPHA! BETA!
 ```
-
-{% code-tabs %}
-{% code-tabs-item title="参数为可空的函数类型" %}
 ```kotlin
 fun <T> Collection<T>.joinToString(separator: String = "",
                                    prefix: String = "",
@@ -86,8 +83,6 @@ fun <T> Collection<T>.joinToString(separator: String = "",
 
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ### 8.1.5 返回函数的函数
 
@@ -162,24 +157,20 @@ enum class OS {WINDOWS, LINUX, MAC, IOS, ANDROID }
     println(averageWindowsDuration) //23.0
 ```
 
-{% code-tabs %}
-{% code-tabs-item title="用一个普通方法去除重复代码" %}
 ```text
 fun List<SiteVisit>.averageDurationFor(os:OS) = filter { it.os==os }.map (SiteVisit::duration).average()
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ```kotlin
-    val log = listOf(
-            SiteVisit("/",34.0,OS.WINDOWS),
-            SiteVisit("/",22.0,OS.MAC),
-            SiteVisit("/login",12.0,OS.WINDOWS),
-            SiteVisit("/signup",8.0,OS.IOS),
-            SiteVisit("/",16.3,OS.ANDROID)
-    )
-    println(log.averageDurationFor(OS.WINDOWS)) //23.0
-    println(log.averageDurationFor(OS.MAC)) //22.0
+val log = listOf(
+        SiteVisit("/",34.0,OS.WINDOWS),
+        SiteVisit("/",22.0,OS.MAC),
+        SiteVisit("/login",12.0,OS.WINDOWS),
+        SiteVisit("/signup",8.0,OS.IOS),
+        SiteVisit("/",16.3,OS.ANDROID)
+)
+println(log.averageDurationFor(OS.WINDOWS)) //23.0
+println(log.averageDurationFor(OS.MAC)) //22.0
 ```
 
 ## 8.2 内联函数：消除lambda带来的运行时开销

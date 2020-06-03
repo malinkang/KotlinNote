@@ -15,15 +15,11 @@ val p2 = Point(30, 40)
 println(p1 + p2) //Point(x=40, y=60)
 ```
 
-{% code-tabs %}
-{% code-tabs-item title="把运算符定义为扩展函数" %}
 ```kotlin
 operator fun Point.plus(other: Point): Point {
     return Point(x + other.x, y + other.y)
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 | 表达式 | 函数名 |
 | :--- | :--- |
@@ -76,16 +72,12 @@ println(-p)
 | ++a，a++ | inc |
 | --a，a-- | dec |
 
-{% code-tabs %}
-{% code-tabs-item title="定义自增运算符" %}
 ```kotlin
 operator fun BigDecimal.inc() = this +BigDecimal.ONE
 var bd = BigDecimal.ZERO
 println(bd++) //0
 println(++bd) //2
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ## 7.2 重载比较运算符
 
@@ -120,8 +112,6 @@ class Person(val firstName: String, val lastName: String) : Comparable<Person> {
 
 ### 7.3.1 通过下标来访问元素：“get”和“set”
 
-{% code-tabs %}
-{% code-tabs-item title="实现get约定" %}
 ```kotlin
 operator fun Point.get(index: Int): Int {
     return when (index) {
@@ -134,11 +124,7 @@ operator fun Point.get(index: Int): Int {
 val p = Point(10,20)
 println(p[1]) //20
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
-{% code-tabs %}
-{% code-tabs-item title="实现set约定" %}
 ```kotlin
 operator fun MutablePoint.set(index: Int, value: Int) {
     when (index) {
@@ -153,8 +139,6 @@ val p = MutablePoint(10, 20)
 p[1] = 42
 println(p) //MutablePoint(x=10, y=42)
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ### 7.3.2 “in”的约定
 
