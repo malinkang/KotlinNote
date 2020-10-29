@@ -117,7 +117,6 @@ fun getWarmth(color: Color) = when (color) {
 println(getWarmth(Color.ORANGE)) //Warm
 ```
 
-
 ### 2.3.3 在“when”结构上使用任意对象
 
 Kotlin中的when结构比Java中的Switch强大得多。Switch要求必须使用常量作为分支条件，when允许使用任何对象。

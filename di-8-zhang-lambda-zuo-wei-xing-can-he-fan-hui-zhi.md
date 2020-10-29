@@ -6,7 +6,7 @@
 
 ### 8.1.1 函数类型
 
-![Kotlin&#x4E2D;&#x51FD;&#x6570;&#x7C7B;&#x578B;&#x8BED;&#x6CD5;](../.gitbook/assets/image%20%286%29.png)
+![Kotlin&#x4E2D;&#x51FD;&#x6570;&#x7C7B;&#x578B;&#x8BED;&#x6CD5;](.gitbook/assets/image%20%286%29.png)
 
 ```kotlin
     val sum = { x: Int, y: Int -> x + y }
@@ -68,6 +68,7 @@ println(letters.joinToString()) //Alpha, Beta
 println(letters.joinToString(transform = String::toLowerCase)) //alpha, beta
 println(letters.joinToString(separator = "! ", postfix = "! ", transform = String::toUpperCase)) //ALPHA! BETA!
 ```
+
 ```kotlin
 fun <T> Collection<T>.joinToString(separator: String = "",
                                    prefix: String = "",
