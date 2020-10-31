@@ -1,28 +1,46 @@
-# 第8章 Lambda作为形参和返回值
+# 高阶函数
 
-## 8.1 
+高阶函数就是以另一个函数作为参数或者返回值的函数。
 
-### 8.1.1 函数类型
+## 函数类型
 
 ![Kotlin&#x4E2D;&#x51FD;&#x6570;&#x7C7B;&#x578B;&#x8BED;&#x6CD5;](.gitbook/assets/image%20%286%29.png)
 
 ```kotlin
-    val sum = { x: Int, y: Int -> x + y }
-    val action = { println(42)}
-    run {
-        println(sum(1,2)) //3
-    }
-    run{
-        action() //42
-    }
+//函数类型的变量
+val sum = { x: Int, y: Int -> x + y }
+val action = { println(42)}
+println(sum(1,2)) //3
+action() //42
 ```
 
 ```kotlin
 val sum: (Int, Int) -> Int = { x, y -> x + y } // 有两个Int型参数和Int型返回值的函数
-val action: () -> Unit = { println(42) } //没有参数和返回值的函数
+val action: () -> Unit = { println(42) } //没有参数和返回值的函数 注意Unit不能省略
 ```
 
-### 8.1.2 调用作为参数的函数
+## 带有接收者的函数类型
+
+Kotlin 提供了调用带有接收者（提供接收者对象）的函数类型实例的能力。
+
+在这样的函数字面值内部，传给调用的接收者对象成为隐式的this，以便访问接收者对象的成员而无需任何额外的限定符，亦可使用 this 表达式 访问接收者对象。
+
+这种行为与扩展函数类似，扩展函数也允许在函数体内部访问接收者对象的成员。
+
+这里有一个带有接收者的函数字面值及其类型的示例，其中在接收者对象上调用了 plus ：
+
+```kotlin
+val sum: Int.(Int) -> Int = { other -> plus(other) }
+3.sum(1)
+```
+
+匿名函数语法允许你直接指定函数字面值的接收者类型。 如果你需要使用带接收者的函数类型声明一个变量，并在之后使用它，这将非常有用。
+
+```kotlin
+val sum = fun Int.(other: Int): Int = this + other
+```
+
+## 调用作为参数的函数
 
 ```kotlin
 fun twoAndThree(operation: (Int, Int) -> Int) {
@@ -36,14 +54,14 @@ twoAndThree { a, b -> a + b } //The result is 5
 twoAndThree { a, b -> a * b } //The result is 6
 ```
 
-### 8.1.3 在Java中使用函数类
+## 在Java中使用函数类
 
 ```kotlin
 LambdaTestKt.twoAndThree((a, b) -> a + b); //The result is 5
 LambdaTestKt.twoAndThree((a, b) -> a * b); //The result is 6
 ```
 
-### 8.1.4 函数类型的参数默认值和null值
+## 函数类型的参数默认值和null值
 
 ```kotlin
 fun <T> Collection<T>.joinToString(separator: String = "",
@@ -83,7 +101,7 @@ fun <T> Collection<T>.joinToString(separator: String = "",
 }
 ```
 
-### 8.1.5 返回函数的函数
+## 返回函数的函数
 
 ```kotlin
 enum class Delivery {STANDARD, EXPEDITED }
@@ -133,7 +151,7 @@ data class Person(val firstName: String, val lastName: String, val phoneNumber: 
     //[Person(firstName=Dmitry, lastName=Jemerov, phoneNumber=123-4567)]
 ```
 
-### 8.1.6 通过lambda去除重复代码
+## 通过lambda去除重复代码
 
 ```kotlin
 data class SiteVisit(val path: String, val duration: Double, val os: OS)
@@ -171,24 +189,4 @@ val log = listOf(
 println(log.averageDurationFor(OS.WINDOWS)) //23.0
 println(log.averageDurationFor(OS.MAC)) //22.0
 ```
-
-## 8.2 内联函数：消除lambda带来的运行时开销
-
-### 8.2.1 内联函数如何运作
-
-### 8.2.2 内联函数的限制
-
-### 8.2.3 内联集合操作
-
-### 8.2.4 决定何时将函数声明成内联
-
-### 8.2.5 使用内联lambda管理资源
-
-## 8.3 高阶函数中的控制流
-
-### 8.3.1 lambda中的返回语句：从一个封闭的函数返回
-
-### 8.3.2 从lambda返回：使用标签返回
-
-### 8.3.3 匿名函数：默认使用局部返回
 

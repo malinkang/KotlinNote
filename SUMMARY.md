@@ -7,7 +7,7 @@
 * [高阶函数与 lambda 表达式](di-5-zhang-lambda-bian-cheng.md)
 * [第6章 Kotlin的类型系统](di-6-zhang-kotlin-de-lei-xing-xi-tong.md)
 * [第7章 运算符重载及其他约定](di-7-zhang-yun-suan-fu-zhong-zai-ji-qi-ta-yue-ding.md)
-* [第8章 Lambda作为形参和返回值](di-8-zhang-lambda-zuo-wei-xing-can-he-fan-hui-zhi.md)
+* [高阶函数](higher-order-functions.md)
 * [第11章 DSL构建](di-11-zhang-dsl-gou-jian.md)
 * [协程](xie-cheng.md)
 
