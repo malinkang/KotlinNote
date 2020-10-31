@@ -187,5 +187,3 @@ for (dayOff in daysOff) {
 //    2017-01-01
 ```
 
-
-
