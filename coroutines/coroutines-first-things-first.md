@@ -206,3 +206,7 @@ Now that you know the basics of coroutines, start learning more about cancellati
 {% embed url="https://medium.com/androiddevelopers/exceptions-in-coroutines-ce8da1ec060c" %}
 
 {% embed url="https://medium.com/androiddevelopers/coroutines-patterns-for-work-that-shouldnt-be-cancelled-e26c40f142ad" %}
+
+## 参考
+
+* [协程中的取消和异常 | 核心概念介绍](https://mp.weixin.qq.com/s?__biz=MzAwODY4OTk2Mg%3D%3D&chksm=808c8358b7fb0a4ee7ab15a9655543c501b3e1fd7c6c5f84f9e151a58c93264ff74066246696&idx=2&mid=2652054301&scene=21&sn=917dddffbdb4d97f950f70dfc570c021#wechat_redirect)
