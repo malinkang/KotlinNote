@@ -8,6 +8,12 @@ This series of blog posts goes in-depth into cancellation and exceptions in Coro
 
 这一系列的博客文章深入讨论了`Kotlin`协程中的取消和异常。为了避免浪费内存和电池寿命，协程的取消至关重要；正确的异常处理是获得良好用户体验的关键。作为本系列其他两部分([第2部分：取消](https://juejin.cn/post/6844904121464520711)，[第3部分：异常](https://juejin.cn/post/6844904133976129543))的基础，这篇博客定义一些协程的核心概念，如协程作用域、Job和协程上下文等。
 
+{% hint style="success" %}
+If you prefer video, check out this talk from KotlinConf’19 by [Florina Muntenescu](https://medium.com/u/d5885adb1ddf?source=post\_page-----e6187bf3bb21-----------------------------------) and I:
+{% endhint %}
+
+如果你喜欢视频，可以看看KotlinConf'19的这个演讲，作者是 Florina Muntenescu 和我。
+
 {% embed url="https://youtu.be/w0kfnydnFWI" %}
 
 ## CoroutineScope <a href="#5130" id="5130"></a>
@@ -194,3 +200,9 @@ Now that you know the basics of coroutines, start learning more about cancellati
 {% endhint %}
 
 现在你已经知道了协程的基础知识，可以通过本系列的第二部分和第三部分开始学习更多关于协程中的取消和异常。
+
+{% embed url="https://medium.com/androiddevelopers/cancellation-in-coroutines-aa6b90163629" %}
+
+{% embed url="https://medium.com/androiddevelopers/exceptions-in-coroutines-ce8da1ec060c" %}
+
+{% embed url="https://medium.com/androiddevelopers/coroutines-patterns-for-work-that-shouldnt-be-cancelled-e26c40f142ad" %}
