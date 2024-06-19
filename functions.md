@@ -333,6 +333,13 @@ fun dfs(graph: Graph) {
 }
 ```
 
+```kotlin
+//报错 Anonymous functions with names are prohibited 
+val transform:(Int)->Int = fun foo(i:Int):Int{
+    return i*i;
+};
+```
+
 ## 参考
 
 * [函数](https://www.kotlincn.net/docs/reference/functions.html)
