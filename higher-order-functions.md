@@ -19,6 +19,35 @@ val sum: (Int, Int) -> Int = { x, y -> x + y } // 有两个Int型参数和Int型
 val action: () -> Unit = { println(42) } //没有参数和返回值的函数 注意Unit不能省略
 ```
 
+=== "Kotlin"
+    ```kotlin
+    class Person{
+    val sayHi={print("hi ${this} ")}
+    }
+    fun main() {
+        val p = Person()
+        println(p)
+        val hi = p.sayHi;
+        hi();
+    }
+    //Person@4fca772d
+    //hi Person@4fca772d 
+    ```
+=== "JavaScript"
+    ```javascript
+    class Person{
+        sayHi(){
+            console.log(`Hi ${this}`);
+        }
+    }
+    const p = new Person();
+    p.sayHi();
+    const sayHi = p.sayHi;
+    sayHi();
+    Hi [object Object]
+    Hi undefined
+    ```
+
 ## 带有接收者的函数类型
 
 Kotlin 提供了调用带有接收者（提供接收者对象）的函数类型实例的能力。
